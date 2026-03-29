@@ -2,6 +2,24 @@
 import streamlit as st
 import requests
 
+
+# ---- PASSWORD PROTECTION ----
+PASSWORD = "arminRN1994"  # change this
+
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    password_input = st.text_input("Enter Password", type="password")
+
+    if password_input == PASSWORD:
+        st.session_state.authenticated = True
+        st.rerun()
+    elif password_input:
+        st.error("Incorrect password")
+
+    st.stop()
+
 st.set_page_config(page_title="Bridge Condition Prediction", page_icon="🌉", layout="wide")
 
 st.title("🌉 Bridge Condition Prediction Tool")
