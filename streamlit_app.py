@@ -7,7 +7,8 @@ st.set_page_config(page_title="Bridge Condition Prediction", page_icon="🌉", l
 st.title("🌉 Bridge Condition Prediction Tool")
 st.write("Enter the bridge features below and predict deck, substructure, and superstructure condition.")
 
-API_URL = st.text_input("Backend API URL", value="https://your-render-backend-url.onrender.com/predict")
+API_URL = "https://bridge-ai-backend.onrender.com/predict"
+st.caption(f"Connected to backend: {API_URL}")
 
 inputs = {}
 
